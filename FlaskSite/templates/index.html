@@ -5,7 +5,18 @@
 {% import "bootstrap/wtf.html" as wtf %}
 <div>
     <h1>Flask Web Application Home Page</h1>
-    <p>Test</p>
-    <p>For Reload purposes</p>
+    <div class="row justify-content-center">
+        <div class="col-4">
+            <a class="btn btn-primary" role="button" href="https://jacksonpeters.dev/projects">Return to Projects</a>
+        </div>
+        <div class="col-4">
+           <a class="btn btn-primary" role="button" href="https://jacksonpeters.dev/projects">Go to GitHub Repository</a> 
+        </div>
+    </div>
+    <div>
+        <p>This website, or web project, is constructed using the Python <a href="https://flask.palletsprojects.com/en/2.0.x/" target="blank">Flask</a> framework; a lightweight and fast tool to use to create a website.</p>
+        <p>The end goal of this web project is to basically evolve it into a mockup online store (kind of like Amazon, although far smaller in scale), which will host tools like searching for products.</p>
+        <p>Once the mock site is completed, a complete rundown will be provided on the <a href="https://jacksonpeters.dev/">main portfolio site</a>.</p>
+    </div>
 </div>
 {% endblock %}
