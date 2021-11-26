@@ -8,7 +8,7 @@ db = SQLAlchemy()
 
 def create_app():
     app=Flask(__name__)
-    app.debug=True
+    app.debug = True
 
     boostrap=Bootstrap(app)
    # app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
