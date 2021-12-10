@@ -8,7 +8,7 @@ Flask-SQLAlchemy==2.3.2
 Flask-User==1.0.1.5
 Flask-WTF==0.14.2
 idna==2.8
-itsdangerous==1.1.0
+itsdangerous==2.0
 gunicorn==19.9.0
 psycopg2-binary==2.8.3
 Jinja2==3.0.3
