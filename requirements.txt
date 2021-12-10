@@ -15,7 +15,7 @@ Jinja2
 Mako
 MarkupSafe
 passlib
-pycparse
+pycparser
 python-dateutil
 python-editor
 requests
