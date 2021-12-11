@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<div id='header'>
+    <h1>Error 500: Internal Server Error</h1>
+</div>
+{% endblock %}
+
+{% block content %}
+<div id='body'>
+    <h2>Looks like an Internal Server has occurred</h2>
+    <a href="{{url_for('main.index')}}"><p>Click Here</a> to go home</p>
+</div>
+{% endblock %}

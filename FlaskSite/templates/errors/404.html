@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<div id='header'>
+    <h1>Error 404: Page Not Found</h1>
+</div>
+{% endblock %}
+
+{% block content %}
+<div id='body'>
+    <h2>Looks like the page you are looking for doesn't exist</h2>
+    <a href="{{url_for('main.index')}}"><p>Click Here</a> to go home</p>
+</div>
+{% endblock %}
