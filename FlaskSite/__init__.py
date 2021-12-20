@@ -11,11 +11,11 @@ def create_app():
     app.debug = True
 
     boostrap=Bootstrap(app)
-   # app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///books.db'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 
     db.init_app(app)
-    #view stuff
+    #view stuff, to avoid circular references
     from . import views
     app.register_blueprint(views.bp)
 
