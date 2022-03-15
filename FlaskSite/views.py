@@ -1,11 +1,12 @@
 from flask import Blueprint, render_template, url_for, redirect
-from models import Item
+from .models import Item
 
 bp = Blueprint('main', __name__)
 
 @bp.route('/', methods=['GET'])
 def index():
-    return render_template('index.html')
+    item = Item.query.all()
+    return render_template('index.html', item=item)
 
 @bp.route('/about', methods=['GET'])
 def about():
