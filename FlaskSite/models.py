@@ -20,3 +20,7 @@ class Item(db.Model):
 
     def __repr__(self):
         return "<Name: {}, ID: {}".format(self.title, self.id)
+
+#Future db model
+#class Author(db.Model):
+
