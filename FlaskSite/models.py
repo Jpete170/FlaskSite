@@ -15,7 +15,7 @@ class genres(enum.Enum):
 #implemented here for future implementation reference
 class sub_genres(enum.Enum):
     Marriage_Drama= 1
-
+    Horror = 2
 
 class Item(db.Model):
     __tablename__="books"
@@ -24,12 +24,15 @@ class Item(db.Model):
     Year_Published = db.Column(db.Integer, index=True)
     Author = db.Column(db.String(100), index=True)
     Description = db.Column(db.String(250), index=True)
-    Genre = db.Column(db.Enum(genres))
-    bookURL = db.column(db.String(100), index=True)
-    bookIMG = db.column(db.String(100), index=True)
+    Genre = db.Column(db.Enum(genres), index=True)
+    Sub_Genre = db.Column(db.Enum(sub_genres), index=True)
+    bookURL = db.Column(db.String(100), index=True)
+    bookIMG = db.Column(db.String(100), index=True)
     def __repr__(self):
         return "<Name: {}, ID: {}".format(self.title, self.id)
 
 #Future db model
-#class Author(db.Model):
+class Author(db.Model):
+    __tablename__="Author"
+    id = db.Column(db.Integer, primary_key=True, nullable=False)
 

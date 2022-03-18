@@ -3,7 +3,10 @@
 {% block content %}
 
 {% import "bootstrap/wtf.html" as wtf %}
-<div>
-    <p>Product Example Page</p>
+<div class="text-center">
+    <h2 class="text-decoration-underline ">Available Products</h2>
+    {% for i in item %}
+        <p>{{i.title}} written by {{i.Author}}</p>
+    {% endfor %}
 </div>
 {% endblock %}
