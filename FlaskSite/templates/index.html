@@ -3,32 +3,61 @@
 
 {% block content %}
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-4">
-            <a class="btn btn-primary" role="button" href="https://jacksonpeters.dev/projects">Return to Projects</a>
+    <div class="">
+        <div class="text-decoration-underline text-center">
+            <h1>JPete Online Books</h1>
         </div>
-        <div class="col-4">
-           <a class="btn btn-primary" role="button" href="https://jacksonpeters.dev/projects">Go to GitHub Repository</a> 
+        <div class="text-left">
+            <p>This website contains information about a variety of public domain books and is built using the <a href="https://flask.palletsprojects.com/en/2.0.x/">Flask micro web framework</a> for Python.</p>
+            <p>Currently, the aim of this website is to act as a repository of public domain books.</p>
         </div>
     </div>
-    <div>
-        <p>This website, or web project, is constructed using the Python <a href="https://flask.palletsprojects.com/en/2.0.x/" target="blank">Flask</a> framework; a lightweight and fast tool to use to create a website.</p>
-        <p>The end goal of this web project is to basically evolve it into a mockup online store (kind of like Amazon, although far smaller in scale), which will host tools like searching for products.</p>
-        <p>Once the mock site is completed, a complete rundown will be provided on the <a href="https://jacksonpeters.dev/">main portfolio site</a>.</p>
+    <h2 class="text-decoration-underline">Available Book Genres</h2>
+    <div class="container">
+        <div class="row row-cols-2">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Fiction</h5>
+                        <div class="card-text">
+                            A range of books from Science Fiction to Horror Fiction to Romance.
+                        </div>
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <a href='/products/fiction' role="button" class="btn btn-primary">View Genre</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Romance</h5>
+                        <div class="card-text">
+                            A range of Romance books.
+                        </div>
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <a href='/products/romance' role="button" class="btn btn-primary">View Genre</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col py-2">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Drama</h5>
+                        <div class="card-text">
+                            A range of Drama books.
+                        </div>
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <a href='/products/drama' role="button" class="btn btn-primary">View Genre</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
-    <div>
-        <h2>Page Links</h2>
-        <ul>
-            <li><a href="/products">Product Page</a></li>
-            <li><a href="/authors">Authors</a></li>
-            
-        </ul>
-    </div>
-    <h2>Available Books</h2>
-    <!-- 
-   {% for i in item %}
-    <p>{{i.title}} written by {{i.Author}}</p>
-   {% endfor %}
-    -->
+  
 </div>
 {% endblock %}

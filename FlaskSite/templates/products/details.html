@@ -1,6 +1,35 @@
-{% extend 'productdetails_base.html' %}
+{% extends 'base.html' %}
 {%import 'bootstrap/wtf.html' as wtf %}
 
 {%block content%}
-
-{%end block%}
+    <div>
+        <div class="text-decoration-underline text-center">
+            <h2>All {{item[0].Genre}} Books</h2>
+        </div>
+        
+        <div class="m-2">
+            <a href="/products" role="button" class="btn btn-primary">Return to Categories</a>
+        </div>
+        <div class="container">
+            <div class="row row-cols-2">
+                {% for i in item %}
+                <div class="col">
+                    <div class="card m-2">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">{{i.title}}</h5>
+                            <img src="{{i.bookIMG}}" class="img-thumbnail rounded mx-auto d-block" />
+                            <div class="card-text">
+                                <p>Sub-Genre: {{i.Sub_Genre}}</p>
+                                {{i.Description}}
+                            </div>
+                            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                <a href='#' role="button" class="btn btn-primary">View Book</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{%endblock%}

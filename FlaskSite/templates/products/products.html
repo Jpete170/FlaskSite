@@ -4,9 +4,54 @@
 
 {% import "bootstrap/wtf.html" as wtf %}
 <div class="text-center">
-    <h2 class="text-decoration-underline ">Available Products</h2>
-    {% for i in item %}
-        <p>{{i.title}} written by {{i.Author}}</p>
-    {% endfor %}
+    <h2 class="text-decoration-underline ">Available Categories</h2>
+    <div class="">
+        <p>A collection of all available categories / genres of books.</p>
+    </div>
+    <div class="container">
+        <div class="row row-cols-2">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Fiction</h5>
+                        <div class="card-text">
+                            A range of books from Science Fiction to Horror Fiction to Romance.
+                        </div>
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <a href='/products/fiction' role="button" class="btn btn-primary">View Genre</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Romance</h5>
+                        <div class="card-text">
+                            A range of Romance books.
+                        </div>
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <a href='/products/romance' role="button" class="btn btn-primary">View Genre</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col py-2">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Drama</h5>
+                        <div class="card-text">
+                            A range of Drama books.
+                        </div>
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <a href='/products/drama' role="button" class="btn btn-primary">View Genre</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
 </div>
 {% endblock %}

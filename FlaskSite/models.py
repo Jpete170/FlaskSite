@@ -24,8 +24,8 @@ class Item(db.Model):
     Year_Published = db.Column(db.Integer, index=True)
     Author = db.Column(db.String(100), index=True)
     Description = db.Column(db.String(250), index=True)
-    Genre = db.Column(db.Enum(genres), index=True)
-    Sub_Genre = db.Column(db.Enum(sub_genres), index=True)
+    Genre = db.Column(db.String(100), index=True)
+    Sub_Genre = db.Column(db.String(100), index=True)
     bookURL = db.Column(db.String(100), index=True)
     bookIMG = db.Column(db.String(100), index=True)
     def __repr__(self):

@@ -8,8 +8,8 @@ bp = Blueprint('main', __name__)
 @bp.route('/', methods=['GET'])
 def index():
     #used to get the different categories of books available
-    #category = Item.query.all()
-    return render_template('index.html')
+    category = Item.query.all()
+    return render_template('index.html', category=category)
 
 @bp.route('/about', methods=['GET'])
 def about():
@@ -25,10 +25,10 @@ def prodcuts():
 
 #specific individual pages for each item / book
 @bp.route('/products/<genre>', methods=["GET"])
-def sci_fi(genre):
-    item = Item.query.filter_by(genre=genre)
-    return "<h1>Page for Science Fiction Novels</h1>"
-    #return render_template("products/details", item=item)
+def page_genre(genre):
+    item = Item.query.filter_by(Genre=genre)
+    #return "<h1>Page for </h1>" + item.Genre
+    return render_template("products/details.html", item=item)
 
 ## Author Pages
 @bp.route('/authors', methods=['GET'])
