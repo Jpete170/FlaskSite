@@ -3,8 +3,50 @@
 {% block content %}
 
 {% import "bootstrap/wtf.html" as wtf %}
-<div>
-    <h1>About Us</h1>
+<div class="container">
+    <h1 class="text-center text-decoration-underline">About</h1>
+    <br />
+    <div>
+        <p>This is a portfolio project created using the Flask web framework for Python, hosted on Heroku.</p>
+    </div>
+    <div class="container">
+        <div class="row row-cols-2">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">GitHub Repository</h5>
+                        <div class="card-text">
+                            The GitHub repository for this project
+                        </div>
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <a href='https://github.com/Jpete170/FlaskSite' target="blank" role="button" class="btn btn-primary">View Repository.</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Documentation / Explanation</h5>
+                        <div class="card-text">
+                            This is where I further explain details behind this project, such as the technology used and the overall goal I have with this web app.
+                        </div>
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <a href='https://jacksonpeters.dev/projects/flask-books' target="blank" role="button" class="btn btn-primary">View Documentation.</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <div>
+        <h2 class="text-decoration-underline">Description</h2>
+        <div>
+            <p>This Flask project is a kind of 'redo' of a University assignment covering rapid web development.</p>
+            <p>Currently, the goal of this project is to re-create a sort of 'online library' of public domain books, by using Flask, HTML and Bootstrap CSS and a SQL Database.</p>
+        </div>
+    </div>
     <br />
 </div>
 {% endblock %}
