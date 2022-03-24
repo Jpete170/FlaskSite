@@ -1,8 +1,34 @@
 {% extends 'base.html' %}
 {% import "bootstrap/wtf.html" as wtf %}
 {% block content %}
-<div>
-    <p>Title: {{item.title}}, written by: {{item.Author}}</p>
+<div class="container">
+    <div class="text-center">
+        <h1>{{item.title}}</h1>
+        <h3><small>Written by: {{item.Author}}</small></h3>
+    </div>
+    <div class="m-2">
+        <a href="/products/{{item.Genre}}" role="button" class="btn btn-primary">Go Back</a>
+    </div>
+    <div class="text-center">
+        <img src="{{item.bookIMG}}" class="img-thumbnail rouned mx-auto d-block" alt="Book Cover Image"/>
+        <h5>Year Published: {{item.Year_Published}}</h5>
+    </div>
+    <div>
+        <h3 class="text-decoration-underline">Description</h3>
+        <p>{{item.Description}}</p>
+    </div>
+
+    <div class="">
+        <h3 class="text-decoration-underline">Links</h3>
+        <p>Get the Book here <a href="{{item.bookURL}}" target="blank">{{item.bookURL}}</a></p>
+    </div>
+
+    <div class="">
+        <h3 class="text-decoration-underline">About the Author</h3>
+        <div>
+            <p>Name: {{auth.Name}}</p>
+        </div>
+    </div>
 </div>
 
 

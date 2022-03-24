@@ -8,8 +8,8 @@ bp = Blueprint('main', __name__)
 @bp.route('/', methods=['GET'])
 def index():
     #used to get the different categories of books available
-    category = Item.query.all()
-    return render_template('index.html', category=category)
+    #category = Item.query.all()
+    return render_template('index.html')
 
 @bp.route('/about', methods=['GET'])
 def about():
@@ -20,33 +20,40 @@ def about():
 @bp.route('/products', methods=['GET'])
 def prodcuts():
     item = Item.query.all()
-    #return "<h1>Placeholder Products Page</h1>"
     return render_template('/products/products.html', item=item)
 
-#specific individual pages for each item / book category
+#specific individual pages for each book category
 @bp.route('/products/<genre>', methods=["GET"])
 def page_genre(genre):
     item = Item.query.filter_by(Genre=genre)
-    #return "<h1>Page for </h1>" + item.Genre
-    return render_template("products/details.html", item=item)
+    title = Item.query.filter_by(Genre=genre).first()
+    return render_template("products/details.html", item=item, title=title)
+
+#Specific pages for each sub-genre of book, part of the filtering functionality
+@bp.route('/products/<genre>/<sub_genre>', methods=['GET'])
+def filter(genre, sub_genre):
+    item = Item.query.filter_by(Genre=genre, Sub_Genre=sub_genre)
+    #just in case sub_genre is needed
+    sub_genre = Item.query.filter_by(Sub_Genre=sub_genre)
+    return render_template("products/details.html", subGenre=sub_genre, item=item)
 
 #individual item page
 @bp.route('/products/book/<book_id>', methods=["GET"])
 def single_page(book_id):
     item = Item.query.filter_by(id = book_id).first()
-    #return "<h1>Page for </h1>" + item.Genre
-    return render_template("products/single.html", item=item)
+    author = Author.query.filter_by(Name=item.Author).first()
+    return render_template("products/single.html", item=item, auth=author)
 
 ## Author Pages
 @bp.route('/authors', methods=['GET'])
 def authors():
-    #authors = Author.query.all()
+    authors = Author.query.all()
     #return "Test Page Currently"
-    return render_template("authors/authors.html")
+    return render_template("authors/authors.html", auth=authors)
 
 #Will need to change <name> into something that is more concise for a html link
 @bp.route('/authors/<name>', methods=['GET'])
 def authPage(name):
     #author = Author.query.filter_by(name=name)
-    #return "Test Page currently"
+    
     return render_template('authors/authorBio.html')#, auth=author)

@@ -35,4 +35,8 @@ class Item(db.Model):
 class Author(db.Model):
     __tablename__="Author"
     id = db.Column(db.Integer, primary_key=True, nullable=False)
+    Name = db.Column(db.String(100), index=True)
+    Birthdate = db.Column(db.String(100), index=True)
+    Deathdate = db.Column(db.String(100), index=True)
+    Bio = db.Column(db.String(100), index=True)
 
