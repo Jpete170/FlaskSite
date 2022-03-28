@@ -27,15 +27,16 @@ def prodcuts():
 def page_genre(genre):
     item = Item.query.filter_by(Genre=genre)
     title = Item.query.filter_by(Genre=genre).first()
-    return render_template("products/details.html", item=item, title=title)
+    genreSelect = Item.query.get('Sub_Genre')
+    return render_template("products/details.html", item=item, title=title, genreSelect=genreSelect)
 
 #Specific pages for each sub-genre of book, part of the filtering functionality
 @bp.route('/products/<genre>/<sub_genre>', methods=['GET'])
 def filter(genre, sub_genre):
     item = Item.query.filter_by(Genre=genre, Sub_Genre=sub_genre)
-    #just in case sub_genre is needed
+    title = Item.query.filter_by(Sub_Genre=sub_genre).first()
     sub_genre = Item.query.filter_by(Sub_Genre=sub_genre)
-    return render_template("products/details.html", subGenre=sub_genre, item=item)
+    return render_template("products/details.html", subGenre=sub_genre, item=item, title=title)
 
 #individual item page
 @bp.route('/products/book/<book_id>', methods=["GET"])

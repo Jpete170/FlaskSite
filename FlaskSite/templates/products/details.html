@@ -4,7 +4,11 @@
 {%block content%}
     <div>
         <div class="text-decoration-underline text-center">
-            <h2>All {{title.Genre}} Books</h2>
+            <h2>All 
+                {% if subGenre %}
+                {{title.Sub_Genre}}
+                {% endif%} {{title.Genre}}
+                Books</h2>
         </div>
         
         <div class="m-2">
@@ -12,8 +16,18 @@
         </div>
         <div class="container border border-2 border-secondary">
             <h3>Filter Options</h3>
-            <div>
-                <p>(Filter Options Here)</p>
+            <div class="">
+                <div class="dropdown">
+                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                      Sub-Genre Options
+                    </a>
+                  
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                       {% for g in item if Genre==Genre%}
+                       <li><a href="/products/{{g.Genre}}/{{g.Sub_Genre}}">{{g.Sub_Genre|e}}</a></li>
+                       {% endfor %}
+                    </ul>
+                </div>
             </div>
         </div>
         <div class="container">

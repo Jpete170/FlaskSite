@@ -8,4 +8,4 @@ class Jumbo(FlaskForm):
 
 #Possibly implement different sub-genre selection fields depending on the main genre selected
 class FictionSubGenre(FlaskForm):
-    Sub_Genre= SelectField(choices=[])
+    Sub_Genre= SelectField(choices=[('science-fiction', 'Science Fiction'), ('psychological_fiction', "Psychological Fiction"), ('mystery', 'Mystery'), ('historical', 'Historical'), ('supernatural', 'Supernatural'), ('horror', 'Horror'), ('english-fiction', 'English Fiction'), ('adventure', 'Adventure')])

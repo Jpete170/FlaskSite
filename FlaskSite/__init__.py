@@ -9,6 +9,7 @@ db = SQLAlchemy()
 def create_app():
     app= Flask(__name__)
     app.debug = True
+    app.secret_key='utroutoru'
 
     Bootstrap(app)
 
