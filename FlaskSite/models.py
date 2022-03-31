@@ -39,4 +39,5 @@ class Author(db.Model):
     Birthdate = db.Column(db.String(100), index=True)
     Deathdate = db.Column(db.String(100), index=True)
     Bio = db.Column(db.String(500), index=True)
+    IMG = db.Column(db.String(100), index=True)
 

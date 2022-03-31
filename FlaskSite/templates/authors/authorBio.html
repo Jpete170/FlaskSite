@@ -1,6 +1,53 @@
-{% extend 'base.html' %}
+{% extends 'base.html' %}
 {%import 'bootstrap/wtf.html' as wtf %}
 
 {%block content%}
-
-{%end block%}
+    <div class="container">
+        <h1 class="text-decoration-underline text-center">
+            Author Bio
+        </h1>
+        <div class="row row-cols-2">
+            <div class="col">
+                <img src="{{auth.IMG}}" class="img-thumbnail"/>
+                
+            </div>
+            <div class="col">
+                <h3 class="text-decoration-underline">{{auth.Name}}</h3>
+                <p>Date of Birth: {{auth.Birthdate}}</p>
+                <p>Date of Death: {{auth.Deathdate}}</p>
+                <div>
+                    <h4>Bio</h4>
+                    <p>{{auth.Bio}}</p>
+                </div>
+                <p>Further Reading:
+                <a href="https://en.wikipedia.org/wiki/{{auth.Name}}" target="blank">Wikipedia Link</a></p>
+            </div>
+        </div>
+        <br/>
+        <div>
+            <h2 class="text-decoration-underline">Written Works</h2>
+            <div class="container">
+                <div class="row">
+                    {% for i in items %}
+                    <div class="col">
+                        <div class="card m-2">
+                            <div class="card-body">
+                                <h5 class="card-title text-center">{{i.title}}</h5>
+                                <img src="{{i.bookIMG}}" class="img-thumbnail rounded mx-auto d-block" />
+                                <div class="card-text">
+                                    <p>Sub-Genre: {{i.Sub_Genre}}</p>
+                                    {{i.Description}}
+                                </div>
+                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                    <a href='/products/book/{{i.id}}' role="button" class="btn btn-primary">View Book</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %} 
+                </div>
+            </div>
+           
+        </div>
+    </div>
+{%endblock%}

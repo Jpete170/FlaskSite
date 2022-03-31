@@ -12,6 +12,29 @@
             <p>Currently, the aim of this website is to act as a repository of public domain books.</p>
         </div>
     </div>
+    <div>
+        <h2 class="text-decoration-underline">Books</h2>
+        <p>An example of books that are available to view on the website</p>
+        <div class="container">
+            <div class="row row-cols-3">
+                {% for i in items[:6] %}
+                    <div class="col py-2">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title text-center">{{i.title}}</h5>
+                                <img src="{{i.bookIMG}}" class="img-thumbnail rouned mx-auto d-block">
+                                <div class="card-text">{{i.Description}}</div>
+                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                    <a href='/products/book/{{i.id}}' role="button" class="btn btn-primary">View Book</a>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
     <h2 class="text-decoration-underline">Available Book Genres</h2>
     <div class="container">
         <div class="row row-cols-3">
@@ -86,6 +109,26 @@
 
         </div>
     </div>
-  
+    <div>
+        <h2 class="text-decoration-underline">Authors</h2>
+        <p>A selection of authors that have written books that are listed on this website</p>
+        <div class="container">
+            <div class="row row-cols-3">
+                {% for a in auth[:6] %}
+                    <div class="col">
+                        <div class="card">
+                            <h5 class="card-title text-center">{{a.Name}}</h5>
+                            <img src="{{a.IMG}}" class="img-thumbnail rouned mx-auto d-block w-50">
+                            <div class="card-body">
+                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                    <a href='/authors/{{a.Name}}' role="button" class="btn btn-primary">View Author Page</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {%endfor%}
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}

@@ -7,9 +7,10 @@ bp = Blueprint('main', __name__)
 ## General Pages
 @bp.route('/', methods=['GET'])
 def index():
-    #used to get the different categories of books available
-    #category = Item.query.all()
-    return render_template('index.html')
+    #used to get all the books in the database
+    items = Item.query.all()
+    authors= Author.query.all()
+    return render_template('index.html', items=items, auth=authors)
 
 @bp.route('/about', methods=['GET'])
 def about():
@@ -55,6 +56,7 @@ def authors():
 #Will need to change <name> into something that is more concise for a html link
 @bp.route('/authors/<name>', methods=['GET'])
 def authPage(name):
-    #author = Author.query.filter_by(name=name)
+    author = Author.query.filter_by(Name=name).first()
+    items = Item.query.filter_by(Author=name)
     
-    return render_template('authors/authorBio.html')#, auth=author)
+    return render_template('authors/authorBio.html', auth=author, items=items)

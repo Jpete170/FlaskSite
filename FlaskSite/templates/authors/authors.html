@@ -3,10 +3,23 @@
 
 {%block content%}
 <div class="text-center">
-    <p>Base Author Page</p>
-    <p>Will contain links to individual author profiles</p>
-    {% for a in auth %}
-    <p>{{a.Name}}</p>
-    {% endfor%}
+    <h1>Authors</h1>
+    <div class="container">
+            <div class="row row-cols-3">
+                {% for a in auth %}
+                    <div class="col">
+                        <div class="card m-2">
+                            <h5 class="card-title text-center">{{a.Name}}</h5>
+                            <img src="{{a.IMG}}" class="img-thumbnail rouned mx-auto d-block w-50">
+                            <div class="card-body">
+                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                    <a href='/authors/{{a.Name}}' role="button" class="btn btn-primary">View Author Page</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {%endfor%}
+            </div>
+        </div>
 </div>
 {%endblock%}
