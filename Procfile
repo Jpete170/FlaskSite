@@ -1,2 +1,3 @@
 # Modify this Procfile to fit your needs
-web: gunicorn 'main:create_app()'
+web: gunicorn -w 2 'FlaskSite:create_app()'
+
