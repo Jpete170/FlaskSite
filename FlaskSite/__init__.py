@@ -13,8 +13,9 @@ def create_app():
     app.secret_key='utroutoru'
 
     Bootstrap(app)
-
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///books.db'
+    folder = os.path.dirname(os.path.abspath(__file__))
+    #location = os.path.join(folder, 'books.db')
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///{}/books.db'.format(folder)
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     migrate = Migrate(app, db)
     db.init_app(app)
