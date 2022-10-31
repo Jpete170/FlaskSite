@@ -3,6 +3,7 @@ from flask import Flask, render_template
 from flask_bootstrap import Bootstrap
 import os
 from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
 
 db = SQLAlchemy()
 
@@ -13,10 +14,11 @@ def create_app():
 
     Bootstrap(app)
 
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///books.sqlite'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///books.db'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-
+    migrate = Migrate(app, db)
     db.init_app(app)
+    
     #view stuff, to avoid circular references
     from . import views
     app.register_blueprint(views.bp)
