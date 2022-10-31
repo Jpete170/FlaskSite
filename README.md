@@ -13,7 +13,7 @@ A website built with the Flask Python framework, that acts as a basic 'online' l
  To note, any changes made to the HTML files will require a page reload to get the changes to appear on the web page
  
  ## Live Environment
- The live / production environment for this app is hosted on Heroku, (here)[https://flask-app-portfolio-jpete.herokuapp.com/]
+ The live / production environment for this app is hosted on [Render](https://render.com/), [here](https://flask-bookstore.onrender.com/)
  
  ## Tech used
  The following tech is used in the project:
