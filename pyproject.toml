@@ -33,3 +33,6 @@ dependencies = [
     "werkzeug>=3.1.4",
     "wtforms>=3.2.1",
 ]
+
+[project.scripts]
+app = "FlaskSite.main:app"
