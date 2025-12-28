@@ -1,6 +1,35 @@
 [project]
-name="flask-bookstore"
-version="1.0.0"
-
+name = "flask-bookstore"
+version = "1.0.0"
+requires-python = ">=3.10"
+dependencies = [
+    "flask>=3.1",
+    "Flask-Bootstrap",
+    "Flask-Login",
+    "Flask-Mail",
+    "Flask-Migrate",
+    "Flask-Script",
+    "Flask-SQLAlchemy",
+    "Flask-WTF",
+    "idna",
+    "itsdangerous",
+    "gunicorn",
+    "psycopg2-binary",
+    "Jinja2",
+    "Mako",
+    "MarkupSafe",
+    "passlib",
+    "pycparser",
+    "python-dateutil",
+    "python-editor",
+    "requests",
+    "six",
+    "SQLAlchemy",
+    "urllib3",
+    "visitor",
+    "Werkzeug",
+    "WTForms",
+    "python-dotenv",
+]
 [project.scripts]
 app = "FlaskSite.main:app"
