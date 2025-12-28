@@ -20,7 +20,7 @@ migrate = Migrate(app, db)
 db.init_app(app)
 
 #view stuff, to avoid circular references
-import views
+from . import views
 app.register_blueprint(views.bp)
 
 @app.errorhandler(404)
