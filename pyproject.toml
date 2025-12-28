@@ -1,0 +1,2 @@
+[project.scripts]
+app = "FlaskSite.main:app"
