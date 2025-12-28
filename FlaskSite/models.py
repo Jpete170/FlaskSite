@@ -1,7 +1,7 @@
 #from FlaskSite.views import index
 import enum
 
-from main import db
+from .main import db
 
 #Genres will be used as part of a future functionality
 class genres(enum.Enum):
