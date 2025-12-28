@@ -1,2 +1,6 @@
+[project]
+name="flask-bookstore"
+version="1.0.0"
+
 [project.scripts]
 app = "FlaskSite.main:app"
