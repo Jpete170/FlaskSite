@@ -1,9 +1,8 @@
 #from FlaskSite.views import index
-from datetime import datetime
-from sqlalchemy.sql import expression
 import enum
 
-from . import db
+from main import db
+
 #Genres will be used as part of a future functionality
 class genres(enum.Enum):
     Science_Fiction = 1
