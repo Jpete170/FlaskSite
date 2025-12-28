@@ -20,8 +20,8 @@ migrate = Migrate(app, db)
 db.init_app(app)
 
 #view stuff, to avoid circular references
-import views.views as views
-app.register_blueprint(views.bp)
+from views.views import bp
+app.register_blueprint(bp)
 
 @app.errorhandler(404)
 def page_not_found(e):
