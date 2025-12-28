@@ -1,6 +1,6 @@
 #from crypt import methods
 from flask import Blueprint, render_template #, url_for, redirect
-from .models import Item, Author
+from models import Item, Author
 
 bp = Blueprint('main', __name__)
 
