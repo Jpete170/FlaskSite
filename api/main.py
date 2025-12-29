@@ -4,6 +4,7 @@ from flask_bootstrap import Bootstrap
 import os
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
+from endpoints.views import bp
 
 db = SQLAlchemy()
 
@@ -20,7 +21,7 @@ migrate = Migrate(app, db)
 db.init_app(app)
 
 #view stuff, to avoid circular references
-from views.views import bp
+
 app.register_blueprint(bp)
 
 @app.errorhandler(404)
